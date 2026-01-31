@@ -107,6 +107,20 @@ body{
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
+.promotion-parent{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.promo-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 @media (max-width: 760px) {
     .hero {
         margin-top: 20px;

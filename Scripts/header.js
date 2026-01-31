@@ -1,4 +1,6 @@
-window.addEventListener("load", () => {
+
+setTimeout(() => {
+  document.addEventListener("DOMContentLoaded", function () {
   const hambuger = document.querySelector(".hambuger");
   console.log(hambuger);
   const mobileNav = document.querySelector(".mobile-nav");
@@ -6,26 +8,29 @@ window.addEventListener("load", () => {
   const themeIcon = document.querySelector(".theme-icon");
 
   let hambugerState = false;
-  hambuger.addEventListener("click", () => {
-    mobileNav.classList.toggle("show");
-    if (hambugerState === false) {
-      hambuger.innerHTML = "❌";
-      hambugerState = true;
-      return;
-    } else if (hambugerState === true) { 
-      hambuger.innerHTML = `
+  if (hambuger) {
+    hambuger.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
+      if (hambugerState === false) {
+        hambuger.innerHTML = "❌";
+        hambugerState = true;
+        return;
+      } else if (hambugerState === true) {
+        hambuger.innerHTML = `
         <div class="bar"></div> 
         <div class="bar"></div>
         <div class="bar"></div> `;
-      hambugerState = false;
-      return;
-    }
-  });
-
+        hambugerState = false;
+        return;
+      }
+    });
+  }
   function toggleTheme(type) {
     console.log(type.value);
   }
-  console.log(themeIcon); 
+  if (navTheme) {
   navTheme.addEventListener("change", () => toggleTheme(navTheme));
   themeIcon.addEventListener("change", () => toggleTheme(themeIcon));
+  }
 });
+}, 3500);
